@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>json 데이터 송수신 테스트</h3>
+    <button id="jbtn">json 데이터 송신하기</button>
+    <div id="server_content"></div>
+    <script>
+      const sever_content = document.getElementById("server_content");
+      const jbtn = document.getElementById("jbtn");
+      jdata = { myname: "홍길동", age: 20 };
+      jbtn.addEventListener("click", async () => {
+        let pendding = await fetch("/jtest/jdata", {
+          headers: { "Content-Type": "application/JSON" },
+          method: "POST",
+          body: JSON.stringify(jdata),
+        });
+        let result = await pendding.json();
+        server_content.innerText = `송수신데이터:${result.myname}과 ${result.age}`;
+        console.log(result);
+      });
+    </script>
+  </body>
+</html>
