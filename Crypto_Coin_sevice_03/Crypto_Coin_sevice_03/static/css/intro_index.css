@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 0 1rem;
+  overflow-y: hidden;
+}
+h1 {
+  text-align: center;
+  height: 5rem;
+  line-height: 5rem;
+  background: rgb(22, 25, 39);
+  color: whitesmoke;
+}
+#main_intro {
+  background-image: url("../img/DOG.png");
+  height: calc(100vh - 7rem);
+  padding: 2.5rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.content a {
+  padding-left: calc(50vw - 20rem);
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.content a:hover {
+  color: rgb(21, 18, 211);
+  font-weight: bold;
+}
+.content {
+  margin-bottom: 1rem;
+  color: rgb(75, 64, 2);
+}
+#mychar {
+  position: absolute;
+  bottom: 5rem;
+  left: 1rem;
+  transform: scaleX(-1);
+  animation: move 10s ease-in-out infinite alternate;
+}
+.treat {
+  width: 80px;
+  height: 80px;
+  background-image: url("https://img.icons8.com/?size=512&id=O8_GvkdHKaTe&format=png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  animation: run 6s ease-in-out infinite alternate,
+    wiggle 0.4s ease-in-out infinite;
+}
+@keyframes move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(400px, -120px) rotate(10deg);
+  }
+  40% {
+    transform: translate(800px, -200px) rotate(-10deg);
+  }
+  60% {
+    transform: translate(1100px, -40px) rotate(15deg);
+  }
+  80% {
+    transform: translate(1400px, -180px) rotate(-15deg);
+  }
+  100% {
+    transform: translate(1700px, 0) rotate(0deg);
+  }
+}

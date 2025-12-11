@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    html파일을 불러왔습니다
+    <br />
+    <form method="post" action="/myinfo">
+      <label>이름<input type="text" name="myname" /></label>
+      <label>나이<input type="number" value="20" name="age" /></label>
+      <input type="submit" value="서버전송" />
+    </form>
+    <br />
+    <img
+      src="{{url_for('static',filename='img/tiger.jpg')}}"
+      style="width: 10rem; height: 10rem"
+    />
+    <img id="timg" />
+    <script>
+      container = document.getElementById("timg");
+      async function getimg() {
+        res = await fetch("/getimg/tiger.jpg");
+        imgtxt = await res.text();
+        console.log(imgtxt);
+        container.src = imgtxt;
+      }
+      getimg();
+    </script>
+  </body>
+</html>

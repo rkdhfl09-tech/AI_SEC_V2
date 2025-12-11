@@ -1,0 +1,29 @@
+#mycontent * {
+  font-size: 1.2rem;
+}
+legend {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+select {
+  width: 16rem;
+}
+#mycontent .con {
+  padding-left: calc(50vw - 8rem);
+  margin-bottom: 1rem;
+}
+label {
+  display: inline-block;
+  width: 8rem;
+}
+#res_contain {
+  top: 10rem;
+}
+#closBtn {
+  cursor: default;
+}
+#closBtn:hover {
+  color: red;
+}
